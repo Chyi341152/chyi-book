@@ -1,0 +1,8 @@
+FAQ:
+    1. How to Change Jupyter Notebook Theme.
+        > $ cd .jupyter/custom
+        > $ wget https://raw.githubusercontent.com/dunovank/jupyter-themes/master/jupyterthemes/styles/compiled/chesterish.css
+        > $ mv chesterish.css custom.css 
+    
+    2. Jupyter kernels
+        > cling -- The cling C++ interpreter 
