@@ -51,7 +51,7 @@ for line, m in lines_m:
 #        print delta.seconds
         time.sleep(delta.seconds/25.0)
 
-    print >>f_log,line,
+    print(line, file=f_log)
     f_log.flush()
     lastdate = date
     

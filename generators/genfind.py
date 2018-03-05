@@ -3,10 +3,15 @@
 # A function that generates files that match a given filename pattern
 
 import os
-import fnmatch
+# This module provides support for Unix shell-style wildcards, which are not the same as regular expressions
+import fnmatch # Unix filename pattern matching
 
 def gen_find(filepat,top):
+    # filepat       : filename pattern
     for path, dirlist, filelist in os.walk(top):
+        # path      : Current directory
+        # dirlist   : List of subdirectories
+        # filelist  : List of files
         for name in fnmatch.filter(filelist,filepat):
             yield os.path.join(path,name)
 
@@ -15,4 +20,6 @@ def gen_find(filepat,top):
 if __name__ == '__main__':
     lognames = gen_find("access-log*","www")
     for name in lognames:
-        print name
+        print(name)
+
+# Linux system find / -name '*.py'

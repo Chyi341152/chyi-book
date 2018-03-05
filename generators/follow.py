@@ -3,7 +3,9 @@
 # Follow a file like tail -f.
 
 import time
+
 def follow(thefile):
+    # f.seek(offset, from_what) ; from_what_vale of 0 measures from the beginning of the file. 1 uses the current file position, and 2 uses the end of the file
     thefile.seek(0,2)
     while True:
         line = thefile.readline()
@@ -26,5 +28,3 @@ if __name__ == '__main__':
     loglines = follow(logfile)
     for line in loglines:
         print(line)
-
-    

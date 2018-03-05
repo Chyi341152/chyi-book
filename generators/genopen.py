@@ -21,4 +21,4 @@ if __name__ == '__main__':
     lognames = gen_find("access-log*","www")
     logfiles = gen_open(lognames)
     for f in logfiles:
-        print f
+        print(f)

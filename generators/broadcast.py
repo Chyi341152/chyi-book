@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     class Consumer(object):
         def send(self,item):
-            print self, "got", item
+            print(self, "got", item)
 
     c1 = Consumer()
     c2 = Consumer()
@@ -22,4 +22,6 @@ if __name__ == '__main__':
     from follow import *
     lines = follow(open("run/foo/access-log"))
     broadcast(lines,[c1,c2,c3])
+
+
 

@@ -13,4 +13,4 @@ request = 'ply/ply-2.3.tar.gz'
 total = sum(1 for r in log
               if r['request'] == '/ply/ply-2.3.tar.gz')
 
-print "Total", total
+print("Total", total)

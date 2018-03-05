@@ -14,6 +14,8 @@ addrs = set(r['host'] for r in log
 import socket
 for addr in addrs:
     try:
-        print socket.gethostbyaddr(addr)[0]
+        # Return a triple (hostname, aliaslist, ipaddrlists) where hostname is the primary host name
+        print(socket.gethostbyaddr(addr))
     except socket.herror:
-        print addr
+        #print(addr)
+        pass

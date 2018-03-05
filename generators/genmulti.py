@@ -3,9 +3,10 @@
 # Generate items from multiple generators (multiplex)
 #
 
-import Queue, threading
+import queue, threading
+
 def gen_multiplex(genlist):
-    item_q = Queue.Queue()
+    item_q = queue.Queue()
     def run_one(source):
         for item in source: item_q.put(item)
 
@@ -44,4 +45,4 @@ if __name__ == '__main__':
     log = gen_multiplex([log1,log2])
     
     for line in log:
-        print line,
+        print(line)

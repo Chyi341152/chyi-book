@@ -2,7 +2,8 @@
 #
 # A very simplistic example of generating events on a set of sockets
 
-import select
+import select # Waiting for I/O completion
+
 def gen_events(socks):
     while True:
         rdr,wrt,err = select.select(socks,socks,socks,0.1)
@@ -22,13 +23,14 @@ if __name__ == '__main__':
 
     addr = ("",12000)
     clientset = []
+
     def acceptor(sockset,addr):
         for c,a in receive_connections(addr):
-            clientset.append(c)
+            sockset.append(c)
 
     import threading
-    acc_thr = threading.Thread(target=acceptor,
-                               args = (clientset, addr))
+    acc_thr = threading.Thread(target= acceptor,
+                               args  = (clientset, addr))
     acc_thr.setDaemon(True)
     acc_thr.start()
     
@@ -36,11 +38,11 @@ if __name__ == '__main__':
         if evt == 'read':
             data = s.recv(1024)
             if not data:
-                print "Closing", s
+                print("Closing", s)
                 s.close()
                 clientset.remove(s)
             else:
-                print s,data
+                print(s,data)
 
 
 

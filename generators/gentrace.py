@@ -2,9 +2,10 @@
 #
 # Trace a generator by printing items received
 
+# A debugging function that will print items going through a generous
 def trace(source):
     for item in source:
-        print item
+        print(item)
         yield item
 
 # Example use
@@ -17,6 +18,3 @@ if __name__ == '__main__':
 
     for r in r404:
         pass
-
-
-                

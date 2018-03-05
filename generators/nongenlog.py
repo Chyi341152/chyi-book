@@ -10,4 +10,4 @@ for line in wwwlog:
     if bytestr != '-':
         total += int(bytestr)
 
-print "Total", total
+print("Total", total)

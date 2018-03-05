@@ -2,13 +2,15 @@
 #
 # An iterator that stores the last value returned.  
 
-class storelast(object):
+class storelast(object): # Store the last item generated
     def __init__(self,source):
         self.source = source
+
     def next(self):
         item = self.source.next()
         self.last = item
         return item
+
     def __iter__(self):
         return self
 
@@ -21,5 +23,5 @@ if __name__ == '__main__':
     log   = apache_log(lines)
 
     for r in log:
-        print r
-        print lines.last
+        print(r)
+        print(lines.last)

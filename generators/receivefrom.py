@@ -4,6 +4,7 @@
 
 import socket
 from genpickle import *
+import io
 
 def receivefrom(addr):
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -18,4 +19,4 @@ def receivefrom(addr):
 # Example use:
 if __name__ == '__main__':
     for r in receivefrom(("",15000)):
-        print r['host'], r['request']
+        print(r['host'], r['request'])

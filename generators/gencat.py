@@ -17,4 +17,4 @@ if __name__ == '__main__':
     logfiles = gen_open(lognames)
     loglines = gen_cat(logfiles)
     for line in loglines:
-        print line,
+        print(line)

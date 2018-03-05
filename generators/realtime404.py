@@ -12,4 +12,4 @@ log      = apache_log(loglines)
 r404 = (r for r in log if r['status'] == 404)
 
 for r in r404:
-    print r['host'], r['datetime'], r['request']
+    print(r['host'], r['datetime'], r['request'])

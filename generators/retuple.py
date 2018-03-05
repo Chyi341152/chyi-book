@@ -16,4 +16,4 @@ tuples   = (g.groups() for g in groups if g)
 
 if __name__ == '__main__':
     for t in tuples:
-        print t
+        print(t)

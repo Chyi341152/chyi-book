@@ -21,4 +21,4 @@ log      = (dict(zip(colnames,t)) for t in tuples)
 
 if __name__ == '__main__':
     for x in log:
-        print x
+        print(x)

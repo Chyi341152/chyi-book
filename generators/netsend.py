@@ -25,15 +25,10 @@ if __name__ == '__main__':
     class Stat404(NetConsumer):
         def send(self,item):
             if item['status'] == 404:
-                NetConsumer.send(self,item)
+                NetConsumer.send(self, item)
     
     stat404 = Stat404(("",15000))
     
     lines = follow(open("run/foo/access-log"))
     log   = apache_log(lines)
-    broadcast(log,[stat404])
-
-
-    
-    
-    
+    broadcast(log, [stat404])

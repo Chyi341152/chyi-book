@@ -12,7 +12,7 @@ def find_404():
     while True:
         r = (yield)
         if r['status'] == 404:
-            print r['status'],r['datetime'],r['request']
+            print(r['status'],r['datetime'],r['request'])
 
 @consumer
 def bytes_transferred():
@@ -20,7 +20,7 @@ def bytes_transferred():
     while True:
         r = (yield)
         total += r['bytes']
-        print "Total bytes", total
+        print("Total bytes", total)
 
 lines = follow(open("run/foo/access-log"))
 log   = apache_log(lines)

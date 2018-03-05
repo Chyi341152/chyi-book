@@ -3,8 +3,11 @@
 # A generator that yields connections to a TCP socket
 
 import socket
+
 def receive_connections(addr):
+    # Create a new socket using the given address family, socket type and protocol number.
     s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    #
     s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
     s.bind(addr)
     s.listen(5)
@@ -16,7 +19,7 @@ def receive_connections(addr):
 
 if __name__ == '__main__':
     for c,a in receive_connections(("",9000)):
-        print "Got connection from", a
+        print("Got connection from", a)
         c.send("Hello World\n")
         c.close()
 

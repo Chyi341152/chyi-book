@@ -2,7 +2,7 @@
 #
 # Parse an apache log file into a sequence of dictionaries
 
-from .fieldmap import *
+from fieldmap import *
 
 import re
 
@@ -28,7 +28,7 @@ def apache_log(lines):
 # Example use:
 
 if __name__ == '__main__':
-    from .linesdir import *
+    from linesdir import *
     lines = lines_from_dir("access-log*","www")
     log = apache_log(lines)
     for r in log:

@@ -3,10 +3,10 @@
 # An example of chaining together different generators into a processing
 # pipeline.    
 
-from .genfind import *
-from .genopen import *
-from .gencat import *
-from .gengrep import *
+from genfind import *
+from genopen import *
+from gencat import *
+from gengrep import *
 
 pat    = r'ply-.*\.gz'
 logdir = 'www'
@@ -18,5 +18,5 @@ patlines  = gen_grep(pat,loglines)
 bytecol   = (line.rsplit(None,1)[1] for line in patlines)
 bytes     = (int(x) for x in bytecol if x != '-')
 
-print "Total", sum(bytes)
+print("Total", sum(bytes))
 

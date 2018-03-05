@@ -15,7 +15,7 @@ def receive_messages(addr,maxsize):
 
 if __name__ == '__main__':
     for msg,addr in receive_messages(("",10000),1024):
-        print msg, "from", addr
+        print(msg, "from", addr)
 
 
     

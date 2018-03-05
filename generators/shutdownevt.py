@@ -4,10 +4,12 @@
 
 import time
 
+# The only way to externally shudown a generator would be to instrument with a flag or some kind of check
 def follow(thefile,shutdown=None):
     thefile.seek(0,2)
     while True:
-        if shutdown and shutdown.isSet(): break
+        if shutdown and shutdown.isSet():
+            break
         line = thefile.readline()
         if not line:
            time.sleep(0.1)
@@ -21,9 +23,9 @@ shutdown_event = threading.Event()
 def run():
     lines = follow(open("run/foo/access-log"),shutdown_event)
     for line in lines:
-        print line,
+        print(line)
 
-    print "Done"
+    print("Done")
 
 
 # Run the above in a separate thread
@@ -34,7 +36,7 @@ t.start()
 
 
 time.sleep(60)
-print "Shutting down"
+print("Shutting down")
 
 shutdown_event.set()
 

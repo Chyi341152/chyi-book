@@ -12,4 +12,4 @@ stat404 = set(r['request'] for r in log
               if r['status'] == 404)
 
 for r in sorted(stat404):
-    print r
+    print(r)

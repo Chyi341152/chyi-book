@@ -8,5 +8,4 @@ from apachelog import *
 lines = lines_from_dir("access-log*","www")
 log = apache_log(lines)
 
-print "%d %s" % max((r['bytes'],r['request'])
-                    for r in log)
+print("%d %s" % max((r['bytes'],r['request']) for r in log))
