@@ -17,4 +17,25 @@
             :ts     : List all of the definitions of the last tag 
             
         The first command is probably the one you will use most often: it jumps to the definition of the tag(function name, structure name, variable name, or pretty much anything) under the cursor. The second command can be used to search for any tag, regardless of the file that is currently opened. If there are multiple definitions/uses for the tn and tp commands can be used to scrool through them, and the ts command can be used to "search" a list for the definition you want (useful when there are dozens or hundreds of definitions for some commandly-used struct). Finally, the last command is used to jump back up in the tag stack to the location you initiated the previous tags search from.
-            
+         
+==> tmux is a terminal multiplexer 
+    What is a terminal multiplexer? It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.
+    
+    Linux:
+        $ sudo apt-get install tmux 
+   tmux Version
+       $ tmux -V 
+   tmux Session:
+       $ tmux new-session -s <会话名称>
+       OR
+       $ tmux new -s dev 
+       
+       $ tmux new-session -s <会话名称> 初始命令
+   tmux detach 分离会话
+       $ [Ctrl+b] [d] tmux 会推出到普通
+
+
+===> Using Template files in VIM 
+    
+       
+       
